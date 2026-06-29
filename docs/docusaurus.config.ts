@@ -12,7 +12,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   url: 'https://overclocked.app',
-  baseUrl: '/docs/',
+  baseUrl: '/',
 
   onBrokenLinks: 'throw',
 
