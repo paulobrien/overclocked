@@ -1,0 +1,136 @@
+[
+  {
+    "id": "er-1",
+    "taskTypeId": "exception-routing",
+    "difficulty": 1,
+    "input": {
+      "text": "Exception: parcel routed to wrong delivery hub; recipient address is in Hub-B coverage zone. Needs rerouting today."
+    },
+    "groundTruth": {
+      "category": "misroute",
+      "queue": "Hub-B",
+      "priority": "P1"
+    },
+    "blurb": "Misroute to Hub-B, P1.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Misroute to Hub-B, P1."
+    }
+  },
+  {
+    "id": "er-2",
+    "taskTypeId": "exception-routing",
+    "difficulty": 1,
+    "input": {
+      "text": "Exception: address format invalid (missing postcode), not blocking, can be corrected next cycle."
+    },
+    "groundTruth": {
+      "category": "address-issue",
+      "queue": "address-fix",
+      "priority": "P3"
+    },
+    "blurb": "Address issue, P3.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Address issue, P3."
+    }
+  },
+  {
+    "id": "er-3",
+    "taskTypeId": "exception-routing",
+    "difficulty": 2,
+    "input": {
+      "text": "Exception: customer refusal reported by driver; item to be returned to sender. Time-sensitive."
+    },
+    "groundTruth": {
+      "category": "refusal",
+      "queue": "returns",
+      "priority": "P2"
+    },
+    "blurb": "Customer refusal, P2.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Customer refusal, P2."
+    }
+  },
+  {
+    "id": "er-4",
+    "taskTypeId": "exception-routing",
+    "difficulty": 2,
+    "adversarial": true,
+    "input": {
+      "text": "Exception: suspected hazmat in non-compliant packaging; safety risk, requires immediate specialist review."
+    },
+    "groundTruth": {
+      "category": "safety-hold",
+      "queue": "hazmat-specialist",
+      "priority": "P1"
+    },
+    "blurb": "Hazmat safety hold, P1 (adversarial).",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Hazmat safety hold, P1 (adversarial)."
+    }
+  },
+  {
+    "id": "er-5",
+    "taskTypeId": "exception-routing",
+    "difficulty": 1,
+    "input": {
+      "text": "Exception: parcel left at wrong address, recovered by driver, needs redelivery."
+    },
+    "groundTruth": {
+      "category": "misdelivery",
+      "queue": "redelivery",
+      "priority": "P2"
+    },
+    "blurb": "Misdelivery, redeliver P2.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Misdelivery, redeliver P2."
+    }
+  },
+  {
+    "id": "er-6",
+    "taskTypeId": "exception-routing",
+    "difficulty": 2,
+    "input": {
+      "text": "Exception: high-value item (declared >£5000) requires signature-on-delivery upgrade and tracking audit."
+    },
+    "groundTruth": {
+      "category": "high-value",
+      "queue": "secure-delivery",
+      "priority": "P2"
+    },
+    "blurb": "High-value upgrade, P2.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "High-value upgrade, P2."
+    }
+  },
+  {
+    "id": "er-7",
+    "taskTypeId": "exception-routing",
+    "difficulty": 1,
+    "input": {
+      "text": "Exception: damaged in transit, awaiting claim documentation, routine."
+    },
+    "groundTruth": {
+      "category": "damage-claim",
+      "queue": "claims",
+      "priority": "P3"
+    },
+    "blurb": "Damage claim, P3.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Damage claim, P3."
+    }
+  }
+]

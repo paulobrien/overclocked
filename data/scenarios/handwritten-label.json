@@ -1,0 +1,103 @@
+[
+  {
+    "id": "hw-1",
+    "taskTypeId": "handwritten-label",
+    "difficulty": 3,
+    "input": {
+      "imageUrl": "/data/assets/handwritten/hw-1.png",
+      "text": "Transcribe this handwritten address label. Return the recipient name, address line, and postcode."
+    },
+    "groundTruth": {
+      "name": "J. Smith",
+      "addressLine": "14 Oak Avenue",
+      "postcode": "M14 5RT"
+    },
+    "blurb": "Handwritten — neat.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Handwritten — neat."
+    }
+  },
+  {
+    "id": "hw-2",
+    "taskTypeId": "handwritten-label",
+    "difficulty": 3,
+    "input": {
+      "imageUrl": "/data/assets/handwritten/hw-2.png",
+      "text": "Transcribe this handwritten address label. Return the recipient name, address line, and postcode."
+    },
+    "groundTruth": {
+      "name": "M. O'Brien",
+      "addressLine": "9 Hill Road",
+      "postcode": "EH3 9NA"
+    },
+    "blurb": "Handwritten — medium.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Handwritten — medium."
+    }
+  },
+  {
+    "id": "hw-3",
+    "taskTypeId": "handwritten-label",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "imageUrl": "/data/assets/handwritten/hw-3.png",
+      "text": "Transcribe this handwritten address label. Return the recipient name, address line, and postcode. The handwriting is difficult to read."
+    },
+    "groundTruth": {
+      "name": "K. Patel",
+      "addressLine": "33 Bridge Lane",
+      "postcode": "B16 4QP"
+    },
+    "blurb": "Handwritten — hard (adversarial).",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Handwritten — hard (adversarial)."
+    }
+  },
+  {
+    "id": "hw-4",
+    "taskTypeId": "handwritten-label",
+    "difficulty": 3,
+    "input": {
+      "imageUrl": "/data/assets/handwritten/hw-4.png",
+      "text": "Transcribe this handwritten address label. Return the recipient name, address line, and postcode."
+    },
+    "groundTruth": {
+      "name": "L. Garcia",
+      "addressLine": "2 Station View",
+      "postcode": "LS2 7DJ"
+    },
+    "blurb": "Handwritten — clear.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Handwritten — clear."
+    }
+  },
+  {
+    "id": "hw-5",
+    "taskTypeId": "handwritten-label",
+    "difficulty": 3,
+    "input": {
+      "imageUrl": "/data/assets/handwritten/hw-5.png",
+      "text": "Transcribe this handwritten address label. Return the recipient name, address line, and postcode."
+    },
+    "groundTruth": {
+      "name": "A. Novak",
+      "addressLine": "27 Park Crescent",
+      "postcode": "CF11 9LR"
+    },
+    "blurb": "Handwritten — medium.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Handwritten — medium."
+    }
+  }
+]

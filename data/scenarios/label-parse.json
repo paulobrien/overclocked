@@ -1,0 +1,150 @@
+[
+  {
+    "id": "lp-1",
+    "taskTypeId": "label-parse",
+    "difficulty": 1,
+    "input": {
+      "imageUrl": "/data/assets/labels/lp-1.png",
+      "text": "Shipping label photo. Read carrier, tracking number, service level, and destination address."
+    },
+    "groundTruth": {
+      "carrier": "DHL",
+      "trackingNumber": "JD014299998834",
+      "serviceLevel": "EXPRESS",
+      "address": "12 Baker Street London W1U 4AF"
+    },
+    "blurb": "DHL Express label, clear print.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "DHL Express label, clear print."
+    }
+  },
+  {
+    "id": "lp-2",
+    "taskTypeId": "label-parse",
+    "difficulty": 1,
+    "input": {
+      "imageUrl": "/data/assets/labels/lp-2.png",
+      "text": "Shipping label photo. Read carrier, tracking number, service level, and destination address."
+    },
+    "groundTruth": {
+      "carrier": "UPS",
+      "trackingNumber": "1Z999AA10123456784",
+      "serviceLevel": "GROUND",
+      "address": "500 Madison Ave New York NY 10022"
+    },
+    "blurb": "UPS ground label.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "UPS ground label."
+    }
+  },
+  {
+    "id": "lp-3",
+    "taskTypeId": "label-parse",
+    "difficulty": 2,
+    "input": {
+      "imageUrl": "/data/assets/labels/lp-3.png",
+      "text": "Smudged/low-legibility shipping label photo. Do your best to read all four fields."
+    },
+    "groundTruth": {
+      "carrier": "FedEx",
+      "trackingNumber": "612345678901",
+      "serviceLevel": "PRIORITY",
+      "address": "88 King Street Manchester M2 4WU"
+    },
+    "blurb": "Low-legibility FedEx label.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Low-legibility FedEx label."
+    }
+  },
+  {
+    "id": "lp-4",
+    "taskTypeId": "label-parse",
+    "difficulty": 1,
+    "input": {
+      "imageUrl": "/data/assets/labels/lp-4.png",
+      "text": "Shipping label photo. Read carrier, tracking number, service level, and destination address."
+    },
+    "groundTruth": {
+      "carrier": "Royal Mail",
+      "trackingNumber": "AB123456789GB",
+      "serviceLevel": "TRACKED 24",
+      "address": "4 Privet Drive Surrey GU8 9NL"
+    },
+    "blurb": "Royal Mail Tracked 24.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Royal Mail Tracked 24."
+    }
+  },
+  {
+    "id": "lp-5",
+    "taskTypeId": "label-parse",
+    "difficulty": 2,
+    "input": {
+      "imageUrl": "/data/assets/labels/lp-5.png",
+      "text": "Shipping label photo with a torn corner. Read carrier, tracking number, service level, and destination address."
+    },
+    "groundTruth": {
+      "carrier": "DPD",
+      "trackingNumber": "15502233491",
+      "serviceLevel": "NEXT DAY",
+      "address": "21 Harbour Road Bristol BS1 6XL"
+    },
+    "blurb": "DPD next day, torn corner.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "DPD next day, torn corner."
+    }
+  },
+  {
+    "id": "lp-6",
+    "taskTypeId": "label-parse",
+    "difficulty": 1,
+    "input": {
+      "imageUrl": "/data/assets/labels/lp-6.png",
+      "text": "Shipping label photo. Read carrier, tracking number, service level, and destination address."
+    },
+    "groundTruth": {
+      "carrier": "Hermes",
+      "trackingNumber": "H0123456789012",
+      "serviceLevel": "STANDARD",
+      "address": "67 High Street Edinburgh EH1 1SY"
+    },
+    "blurb": "Hermes standard.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Hermes standard."
+    }
+  },
+  {
+    "id": "lp-7",
+    "taskTypeId": "label-parse",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "imageUrl": "/data/assets/labels/lp-7.png",
+      "text": "Heavily water-damaged label. Recover carrier, tracking number, service level, and destination address if at all possible."
+    },
+    "groundTruth": {
+      "carrier": "Yodel",
+      "trackingNumber": "JD000223344556",
+      "serviceLevel": "ECONOMY",
+      "address": "9 Mill Lane Leeds LS1 5PU"
+    },
+    "blurb": "Water-damaged Yodel label (hard).",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Water-damaged Yodel label (hard)."
+    }
+  }
+]

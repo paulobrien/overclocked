@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* OVERCLOCKED global styles — ported from the arena mockup. The cabinet/
+   bezel/scanline/vignette chrome is the coin-op arcade DNA from §8. */
+
+:root {
+  color-scheme: dark;
+}
+
+/* ── Accessibility: focus visibility (WCAG 2.4.7) ────────────────────────
+   A keyboard-focusable element must show a clear ring. We scope to
+   :focus-visible so mouse clicks don't show it (preserving the arcade look)
+   but keyboard nav always does. The ring uses the lane amber for visibility
+   on both dark and manila backgrounds. */
+:focus-visible {
+  outline: 2px solid #f5a623;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+/* Keep the ring off decorative SVGs (they're aria-hidden anyway). */
+[aria-hidden="true"]:focus-visible {
+  outline: none;
+}
+/* Skip-to-content link — keyboard users can jump past the cabinet chrome. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: #ef5a2a;
+  color: #1a1f2b;
+  padding: 8px 16px;
+  border-radius: 0 0 8px 0;
+  font-weight: 700;
+  text-decoration: none;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+/* Respect users who disable smooth motion at the OS level (WCAG 2.3.3). */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: radial-gradient(120% 90% at 50% 0%, #20283a 0%, #1a1f2b 45%, #0d1118 100%);
+  color: #e7ecf3;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* The cabinet — coin-op arcade enclosure. */
+.cabinet {
+  width: 100%;
+  max-width: 1180px;
+  position: relative;
+  border-radius: 18px;
+  padding: 14px;
+  background: linear-gradient(180deg, #0e1320, #0a0e17);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+.bezel {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(180deg, #1a1f2b, #141926);
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.5), inset 0 0 70px rgba(0, 0, 0, 0.55);
+}
+.scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0px,
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  mix-blend-mode: multiply;
+  opacity: 0.35;
+}
+.vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 39;
+  box-shadow: inset 0 0 160px rgba(0, 0, 0, 0.7);
+}
+
+/* Belt — the conveyor that backs up when a lane falls behind. */
+.belt {
+  position: relative;
+  height: 62px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #323d4d, #222b38);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 -2px 4px rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+.tread {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0 22px,
+    rgba(0, 0, 0, 0.35) 22px 26px
+  );
+  animation: tread 1.1s linear infinite;
+}
+.tread.slow {
+  animation-duration: 3.2s;
+}
+.belt .rail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.45);
+}
+.belt .rail.top { top: 6px; }
+.belt .rail.bot { bottom: 6px; }
+
+.folder {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 34px;
+  transform: translateY(-50%);
+  will-change: left;
+}
+.folder .body {
+  position: absolute;
+  inset: 0;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #d6b483, #bd9560);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4), inset 0 0 0 1px #a07c4d, inset 0 -6px 8px rgba(0, 0, 0, 0.12);
+}
+.folder .tape {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 8px;
+  transform: translateX(-50%);
+  background: rgba(214, 196, 158, 0.85);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+.folder .label {
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  width: 13px;
+  height: 10px;
+  border-radius: 1px;
+  background: #f3efe6;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+.folder .bc {
+  position: absolute;
+  top: 7px;
+  left: 6px;
+  width: 11px;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, #2a2620 0 1px, transparent 1px 2px);
+}
+
+@keyframes tread {
+  to {
+    background-position-x: -48px;
+  }
+}
+
+/* Manila focus card — the parcel dossier / exception ticket. A FIXED height for
+   every task so the layout never jumps as fields reveal or tasks change (the
+   card is sized to the busiest task; shorter ones simply have headroom).
+   min-width: 0 lets the card sit in its grid track (164px + minmax(0,1fr)) and
+   fill it at a STABLE width — without it a long field value (an address, a
+   category) would widen the card and steal width from the other lanes, so the
+   cards visibly shifted size as fields populated. */
+.focus {
+  background: linear-gradient(180deg, #e8dcc0, #dccba2);
+  color: #2a2620;
+  border-radius: 10px;
+  padding: 12px 14px;
+  position: relative;
+  height: 204px;
+  min-width: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45), inset 0 0 0 1px #b9a373;
+}
+.focus::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  pointer-events: none;
+  background: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.012) 0 6px, transparent 6px 12px);
+}
+
+@keyframes pulse {
+  50% { opacity: 0.45; }
+}
+@keyframes nudge {
+  50% { transform: translateY(-50%) translateX(-2px); }
+}
+@keyframes thwack {
+  0% { transform: rotate(-9deg) scale(1.6); opacity: 0; }
+  60% { opacity: 1; }
+  100% { transform: rotate(-9deg) scale(1); opacity: 1; }
+}
+/* The human lane's 30s "stamp it fast" pressure bar. */
+@keyframes human-countdown {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+/* Simple fade-in — used by the focus card's "should be" annotation (during the
+   race) and the winner banner. Global so it works regardless of mount order. */
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tread,
+  .timer-low,
+  .spark path,
+  [class*='animate-'] {
+    animation: none !important;
+  }
+}

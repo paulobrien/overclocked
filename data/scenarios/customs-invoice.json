@@ -1,0 +1,118 @@
+[
+  {
+    "id": "ci-1",
+    "taskTypeId": "customs-invoice",
+    "difficulty": 2,
+    "input": {
+      "text": "--- Commercial Invoice ---\nSeller: Shenzhen Tech Co. Ltd.\nBuyer: Acme UK Ltd.\nGoods: 50x USB-C Hub, Model UH-240\nCountry of Origin: CN\nHS Tariff: 8471.50\nDeclared Value: GBP 612.00"
+    },
+    "groundTruth": {
+      "hsCode": "8471.50",
+      "declaredValue": "GBP 612.00",
+      "countryOfOrigin": "CN"
+    },
+    "blurb": "Clean commercial invoice.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Clean commercial invoice."
+    }
+  },
+  {
+    "id": "ci-2",
+    "taskTypeId": "customs-invoice",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "text": "--- Commercial Invoice ---\nSeller: textiles gmbh\nBuyer: Discount Imports\nGoods: 200x Acrylic Sweater\nCountry of Origin: BD\nHS Tariff: 6110.20\nDeclared Value: USD 180.00\n(Note: retail value approx USD 4200)"
+    },
+    "groundTruth": {
+      "hsCode": "6110.20",
+      "declaredValue": "USD 180.00",
+      "countryOfOrigin": "BD"
+    },
+    "blurb": "Suspected customs undervaluation (adversarial).",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Suspected customs undervaluation (adversarial)."
+    }
+  },
+  {
+    "id": "ci-3",
+    "taskTypeId": "customs-invoice",
+    "difficulty": 2,
+    "input": {
+      "text": "--- Commercial Invoice ---\nSeller: Osaka Precision KK\nBuyer:精密 Tools UK\nGoods: 12x Carbide End Mill Set\nCountry of Origin: JP\nHS Tariff: 8207.50\nDeclared Value: JPY 280000"
+    },
+    "groundTruth": {
+      "hsCode": "8207.50",
+      "declaredValue": "JPY 280000",
+      "countryOfOrigin": "JP"
+    },
+    "blurb": "Japanese tooling invoice.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Japanese tooling invoice."
+    }
+  },
+  {
+    "id": "ci-4",
+    "taskTypeId": "customs-invoice",
+    "difficulty": 1,
+    "input": {
+      "text": "--- Commercial Invoice ---\nSeller: Bavaria Auto Parts\nBuyer: Midlands Motors\nGoods: 30x Brake Pad Set\nCountry of Origin: DE\nHS Tariff: 8708.30\nDeclared Value: EUR 940.00"
+    },
+    "groundTruth": {
+      "hsCode": "8708.30",
+      "declaredValue": "EUR 940.00",
+      "countryOfOrigin": "DE"
+    },
+    "blurb": "German auto parts.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "German auto parts."
+    }
+  },
+  {
+    "id": "ci-5",
+    "taskTypeId": "customs-invoice",
+    "difficulty": 2,
+    "input": {
+      "text": "--- Commercial Invoice ---\nSeller: Milano Leather SRL\nBuyer: Bond Street Boutique\nGoods: 8x Handbag, leather\nCountry of Origin: IT\nHS Tariff: 4202.21\nDeclared Value: EUR 3200.00"
+    },
+    "groundTruth": {
+      "hsCode": "4202.21",
+      "declaredValue": "EUR 3200.00",
+      "countryOfOrigin": "IT"
+    },
+    "blurb": "Italian leather goods.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Italian leather goods."
+    }
+  },
+  {
+    "id": "ci-6",
+    "taskTypeId": "customs-invoice",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "text": "--- Commercial Invoice ---\nSeller: Freeport Holdings\nBuyer: UK Reseller\nGoods: 500x Generic Electronic Component\nCountry of Origin: ?? (unclear)\nHS Tariff: 8542.30\nDeclared Value: USD 50.00\n(Retail approx USD 9000)"
+    },
+    "groundTruth": {
+      "hsCode": "8542.30",
+      "declaredValue": "USD 50.00",
+      "countryOfOrigin": "unknown"
+    },
+    "blurb": "Undervalued + obscure origin (adversarial).",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Undervalued + obscure origin (adversarial)."
+    }
+  }
+]

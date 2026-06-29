@@ -1,0 +1,104 @@
+[
+  {
+    "id": "st-1",
+    "taskTypeId": "seal-tamper",
+    "difficulty": 2,
+    "input": {
+      "imageUrl": "/data/assets/seal/st-1.png",
+      "text": "Container seal photo. Is the seal intact? Has it been tampered with? Set the flag (clear/tamper/unknown)."
+    },
+    "groundTruth": {
+      "sealIntact": true,
+      "tampered": false,
+      "flag": "clear"
+    },
+    "blurb": "Seal intact — clear.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Seal intact — clear."
+    }
+  },
+  {
+    "id": "st-2",
+    "taskTypeId": "seal-tamper",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "imageUrl": "/data/assets/seal/st-2.png",
+      "text": "Container seal photo. Is the seal intact? Has it been tampered with? Set the flag (clear/tamper/unknown)."
+    },
+    "groundTruth": {
+      "sealIntact": false,
+      "tampered": true,
+      "flag": "tamper"
+    },
+    "blurb": "Seal broken / tampered — flag TAMPER.",
+    "correctOutcome": {
+      "verdict": "refuse",
+      "pass": false,
+      "summary": "Seal broken / tampered — flag TAMPER."
+    }
+  },
+  {
+    "id": "st-3",
+    "taskTypeId": "seal-tamper",
+    "difficulty": 2,
+    "input": {
+      "imageUrl": "/data/assets/seal/st-3.png",
+      "text": "Container seal photo. Is the seal intact? Has it been tampered with? Set the flag (clear/tamper/unknown)."
+    },
+    "groundTruth": {
+      "sealIntact": true,
+      "tampered": false,
+      "flag": "clear"
+    },
+    "blurb": "Bolt seal intact — clear.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Bolt seal intact — clear."
+    }
+  },
+  {
+    "id": "st-4",
+    "taskTypeId": "seal-tamper",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "imageUrl": "/data/assets/seal/st-4.png",
+      "text": "Container seal photo. Is the seal intact? Has it been tampered with? Set the flag (clear/tamper/unknown)."
+    },
+    "groundTruth": {
+      "sealIntact": false,
+      "tampered": true,
+      "flag": "tamper"
+    },
+    "blurb": "Cut cable tie — tamper.",
+    "correctOutcome": {
+      "verdict": "refuse",
+      "pass": false,
+      "summary": "Cut cable tie — tamper."
+    }
+  },
+  {
+    "id": "st-5",
+    "taskTypeId": "seal-tamper",
+    "difficulty": 3,
+    "input": {
+      "imageUrl": "/data/assets/seal/st-5.png",
+      "text": "Container seal photo. Is the seal intact? Has it been tampered with? Set the flag (clear/tamper/unknown)."
+    },
+    "groundTruth": {
+      "sealIntact": false,
+      "tampered": false,
+      "flag": "unknown"
+    },
+    "blurb": "Seal illegible — unknown.",
+    "correctOutcome": {
+      "verdict": "hold",
+      "pass": true,
+      "summary": "Seal illegible — unknown."
+    }
+  }
+]

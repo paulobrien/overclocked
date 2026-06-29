@@ -1,0 +1,29 @@
+# dependencies
+node_modules
+.pnpm-store
+
+# build / generated artifacts
+dist
+.wrangler
+*.tsbuildinfo
+# Docusaurus (docs/) build output
+docs/build
+docs/.docusaurus
+# test / tooling output
+test-results
+playwright-report
+.playwright-mcp
+
+# env / secrets — NEVER commit (but keep the *.example templates)
+.dev.vars
+.env
+.env.*
+!.env*.example
+
+# editor / os
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.log
+npm-debug.log*

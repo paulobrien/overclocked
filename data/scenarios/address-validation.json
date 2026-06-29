@@ -1,0 +1,118 @@
+[
+  {
+    "id": "av-1",
+    "taskTypeId": "address-validation",
+    "difficulty": 1,
+    "input": {
+      "text": "Validate and normalize this address for delivery: \"10 downing st, london, sw1a 2aa\". Return the canonical form, whether it is deliverable, and the zone."
+    },
+    "groundTruth": {
+      "canonical": "10 Downing Street, London, SW1A 2AA",
+      "deliverable": true,
+      "zone": "EU-1"
+    },
+    "blurb": "Downing St, normalizable.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Downing St, normalizable."
+    }
+  },
+  {
+    "id": "av-2",
+    "taskTypeId": "address-validation",
+    "difficulty": 2,
+    "adversarial": true,
+    "input": {
+      "text": "Validate and normalize this address for delivery: \"42 wallaby way, sydney, postcode missing\". Return the canonical form, whether it is deliverable, and the zone."
+    },
+    "groundTruth": {
+      "canonical": "42 Wallaby Way, Sydney",
+      "deliverable": false,
+      "zone": "INT-AU"
+    },
+    "blurb": "Missing postcode, undeliverable.",
+    "correctOutcome": {
+      "verdict": "hold",
+      "pass": true,
+      "summary": "Missing postcode, undeliverable."
+    }
+  },
+  {
+    "id": "av-3",
+    "taskTypeId": "address-validation",
+    "difficulty": 1,
+    "input": {
+      "text": "Validate and normalize this address for delivery: \"221b Baker Street, London, NW1 6XE\". Return the canonical form, whether it is deliverable, and the zone."
+    },
+    "groundTruth": {
+      "canonical": "221B Baker Street, London, NW1 6XE",
+      "deliverable": true,
+      "zone": "EU-1"
+    },
+    "blurb": "Baker St, already canonical.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Baker St, already canonical."
+    }
+  },
+  {
+    "id": "av-4",
+    "taskTypeId": "address-validation",
+    "difficulty": 2,
+    "input": {
+      "text": "Validate and normalize this address for delivery: \"100 Market st apt 5b newyork ny 10005\". Return the canonical form, whether it is deliverable, and the zone."
+    },
+    "groundTruth": {
+      "canonical": "100 Market Street, Apt 5B, New York, NY 10005",
+      "deliverable": true,
+      "zone": "US-E"
+    },
+    "blurb": "NYC apartment.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "NYC apartment."
+    }
+  },
+  {
+    "id": "av-5",
+    "taskTypeId": "address-validation",
+    "difficulty": 2,
+    "adversarial": true,
+    "input": {
+      "text": "Validate and normalize this address for delivery: \"nowhere lane, fictionaltown, ZZ999\". Return the canonical form, whether it is deliverable, and the zone."
+    },
+    "groundTruth": {
+      "canonical": "Nowhere Lane, Fictionaltown",
+      "deliverable": false,
+      "zone": "unknown"
+    },
+    "blurb": "Fictional address, undeliverable.",
+    "correctOutcome": {
+      "verdict": "hold",
+      "pass": true,
+      "summary": "Fictional address, undeliverable."
+    }
+  },
+  {
+    "id": "av-6",
+    "taskTypeId": "address-validation",
+    "difficulty": 1,
+    "input": {
+      "text": "Validate and normalize this address for delivery: \"5 RUE DE RIVOLI, 75001 PARIS\". Return the canonical form, whether it is deliverable, and the zone."
+    },
+    "groundTruth": {
+      "canonical": "5 Rue de Rivoli, 75001 Paris",
+      "deliverable": true,
+      "zone": "EU-3"
+    },
+    "blurb": "Paris address.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Paris address."
+    }
+  }
+]

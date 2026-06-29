@@ -1,0 +1,159 @@
+[
+  {
+    "id": "cv-1",
+    "taskTypeId": "conveyor-incident",
+    "difficulty": 1,
+    "input": {
+      "text": "Line-camera frames in time order. Track the parcel across the sequence: classify what happens to it (rides clear, jams and stalls, falls off the edge, or is crushed) and decide the disposition.",
+      "frames": [
+        "/data/assets/conveyor/cv-1-f1.png",
+        "/data/assets/conveyor/cv-1-f2.png",
+        "/data/assets/conveyor/cv-1-f3.png",
+        "/data/assets/conveyor/cv-1-f4.png",
+        "/data/assets/conveyor/cv-1-f5.png"
+      ],
+      "videoUrl": "/data/assets/conveyor/cv-1.mp4"
+    },
+    "groundTruth": {
+      "event": "clear",
+      "action": "accept"
+    },
+    "blurb": "Clean pass-through — rides off the end.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Clean pass-through — rides off the end."
+    }
+  },
+  {
+    "id": "cv-2",
+    "taskTypeId": "conveyor-incident",
+    "difficulty": 2,
+    "input": {
+      "text": "Line-camera frames in time order. Track the parcel across the sequence: classify what happens to it (rides clear, jams and stalls, falls off the edge, or is crushed) and decide the disposition.",
+      "frames": [
+        "/data/assets/conveyor/cv-2-f1.png",
+        "/data/assets/conveyor/cv-2-f2.png",
+        "/data/assets/conveyor/cv-2-f3.png",
+        "/data/assets/conveyor/cv-2-f4.png",
+        "/data/assets/conveyor/cv-2-f5.png"
+      ],
+      "videoUrl": "/data/assets/conveyor/cv-2.mp4"
+    },
+    "groundTruth": {
+      "event": "jam",
+      "action": "reroute"
+    },
+    "blurb": "Parcel stalls mid-belt — a queue piles up behind.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Parcel stalls mid-belt — a queue piles up behind."
+    }
+  },
+  {
+    "id": "cv-3",
+    "taskTypeId": "conveyor-incident",
+    "difficulty": 2,
+    "input": {
+      "text": "Line-camera frames in time order. Track the parcel across the sequence: classify what happens to it (rides clear, jams and stalls, falls off the edge, or is crushed) and decide the disposition.",
+      "frames": [
+        "/data/assets/conveyor/cv-3-f1.png",
+        "/data/assets/conveyor/cv-3-f2.png",
+        "/data/assets/conveyor/cv-3-f3.png",
+        "/data/assets/conveyor/cv-3-f4.png",
+        "/data/assets/conveyor/cv-3-f5.png"
+      ],
+      "videoUrl": "/data/assets/conveyor/cv-3.mp4"
+    },
+    "groundTruth": {
+      "event": "fall",
+      "action": "reroute"
+    },
+    "blurb": "Drifts to the edge and topples off the belt.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Drifts to the edge and topples off the belt."
+    }
+  },
+  {
+    "id": "cv-4",
+    "taskTypeId": "conveyor-incident",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "text": "Line-camera frames in time order. Track the parcel across the sequence: classify what happens to it (rides clear, jams and stalls, falls off the edge, or is crushed) and decide the disposition.",
+      "frames": [
+        "/data/assets/conveyor/cv-4-f1.png",
+        "/data/assets/conveyor/cv-4-f2.png",
+        "/data/assets/conveyor/cv-4-f3.png",
+        "/data/assets/conveyor/cv-4-f4.png",
+        "/data/assets/conveyor/cv-4-f5.png"
+      ],
+      "videoUrl": "/data/assets/conveyor/cv-4.mp4"
+    },
+    "groundTruth": {
+      "event": "crush",
+      "action": "refuse"
+    },
+    "blurb": "Trailing tote rams it into the scan post — crushed.",
+    "correctOutcome": {
+      "verdict": "refuse",
+      "pass": false,
+      "summary": "Trailing tote rams it into the scan post — crushed."
+    }
+  },
+  {
+    "id": "cv-5",
+    "taskTypeId": "conveyor-incident",
+    "difficulty": 1,
+    "input": {
+      "text": "Line-camera frames in time order. Track the parcel across the sequence: classify what happens to it (rides clear, jams and stalls, falls off the edge, or is crushed) and decide the disposition.",
+      "frames": [
+        "/data/assets/conveyor/cv-5-f1.png",
+        "/data/assets/conveyor/cv-5-f2.png",
+        "/data/assets/conveyor/cv-5-f3.png",
+        "/data/assets/conveyor/cv-5-f4.png",
+        "/data/assets/conveyor/cv-5-f5.png"
+      ],
+      "videoUrl": "/data/assets/conveyor/cv-5.mp4"
+    },
+    "groundTruth": {
+      "event": "clear",
+      "action": "accept"
+    },
+    "blurb": "Standard parcel — an uneventful run.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Standard parcel — an uneventful run."
+    }
+  },
+  {
+    "id": "cv-6",
+    "taskTypeId": "conveyor-incident",
+    "difficulty": 3,
+    "input": {
+      "text": "Line-camera frames in time order. Track the parcel across the sequence: classify what happens to it (rides clear, jams and stalls, falls off the edge, or is crushed) and decide the disposition.",
+      "frames": [
+        "/data/assets/conveyor/cv-6-f1.png",
+        "/data/assets/conveyor/cv-6-f2.png",
+        "/data/assets/conveyor/cv-6-f3.png",
+        "/data/assets/conveyor/cv-6-f4.png",
+        "/data/assets/conveyor/cv-6-f5.png"
+      ],
+      "videoUrl": "/data/assets/conveyor/cv-6.mp4"
+    },
+    "groundTruth": {
+      "event": "crush",
+      "action": "refuse"
+    },
+    "blurb": "Caught and crushed against the sorter.",
+    "correctOutcome": {
+      "verdict": "refuse",
+      "pass": false,
+      "summary": "Caught and crushed against the sorter."
+    }
+  }
+]

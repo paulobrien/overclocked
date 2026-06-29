@@ -1,0 +1,117 @@
+[
+  {
+    "id": "mr-1",
+    "taskTypeId": "manifest-recon",
+    "difficulty": 1,
+    "input": {
+      "text": "--- Manifest ---\nExpected SKUs: 48\nScanned at dock: 46\nSystem shows 2 cartons short against the ASN."
+    },
+    "groundTruth": {
+      "expected": 48,
+      "scanned": 46,
+      "missing": 2
+    },
+    "blurb": "Two SKUs short against ASN.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Two SKUs short against ASN."
+    }
+  },
+  {
+    "id": "mr-2",
+    "taskTypeId": "manifest-recon",
+    "difficulty": 1,
+    "input": {
+      "text": "--- Manifest ---\nExpected SKUs: 120\nScanned at dock: 120\nReconciles clean."
+    },
+    "groundTruth": {
+      "expected": 120,
+      "scanned": 120,
+      "missing": 0
+    },
+    "blurb": "Clean reconciliation.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Clean reconciliation."
+    }
+  },
+  {
+    "id": "mr-3",
+    "taskTypeId": "manifest-recon",
+    "difficulty": 2,
+    "input": {
+      "text": "--- Manifest ---\nExpected SKUs: 300\nScanned at dock: 287\n13 cartons unaccounted for after full sweep."
+    },
+    "groundTruth": {
+      "expected": 300,
+      "scanned": 287,
+      "missing": 13
+    },
+    "blurb": "13 cartons short.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "13 cartons short."
+    }
+  },
+  {
+    "id": "mr-4",
+    "taskTypeId": "manifest-recon",
+    "difficulty": 2,
+    "adversarial": true,
+    "input": {
+      "text": "--- Manifest ---\nExpected SKUs: 64\nScanned at dock: 71\n7 EXTRA cartons received beyond ASN. Possible wrong-pallet delivery."
+    },
+    "groundTruth": {
+      "expected": 64,
+      "scanned": 71,
+      "missing": 0
+    },
+    "blurb": "Over-delivery — 7 extra (adversarial).",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Over-delivery — 7 extra (adversarial)."
+    }
+  },
+  {
+    "id": "mr-5",
+    "taskTypeId": "manifest-recon",
+    "difficulty": 1,
+    "input": {
+      "text": "--- Manifest ---\nExpected SKUs: 12\nScanned at dock: 11\n1 unit short."
+    },
+    "groundTruth": {
+      "expected": 12,
+      "scanned": 11,
+      "missing": 1
+    },
+    "blurb": "Single short.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Single short."
+    }
+  },
+  {
+    "id": "mr-6",
+    "taskTypeId": "manifest-recon",
+    "difficulty": 1,
+    "input": {
+      "text": "--- Manifest ---\nExpected SKUs: 200\nScanned at dock: 199\n1 unit short, traced to damaged carton removal."
+    },
+    "groundTruth": {
+      "expected": 200,
+      "scanned": 199,
+      "missing": 1
+    },
+    "blurb": "1 short, cause known.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "1 short, cause known."
+    }
+  }
+]

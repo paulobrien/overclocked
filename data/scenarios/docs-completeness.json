@@ -1,0 +1,126 @@
+[
+  {
+    "id": "dc-1",
+    "taskTypeId": "docs-completeness",
+    "difficulty": 1,
+    "input": {
+      "text": "Check shipping documents for completeness. Documents present: Bill of Lading (BOL), Certificate of Origin (COO), Packing List. Is the document set complete?"
+    },
+    "groundTruth": {
+      "bolPresent": true,
+      "cooPresent": true,
+      "packingListPresent": true,
+      "complete": true
+    },
+    "blurb": "All docs present — complete.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "All docs present — complete."
+    }
+  },
+  {
+    "id": "dc-2",
+    "taskTypeId": "docs-completeness",
+    "difficulty": 2,
+    "adversarial": true,
+    "input": {
+      "text": "Check shipping documents for completeness. Documents present: Bill of Lading (BOL), Packing List. Certificate of Origin (COO) is missing. Is the document set complete?"
+    },
+    "groundTruth": {
+      "bolPresent": true,
+      "cooPresent": false,
+      "packingListPresent": true,
+      "complete": false
+    },
+    "blurb": "Missing COO — incomplete.",
+    "correctOutcome": {
+      "verdict": "hold",
+      "pass": true,
+      "summary": "Missing COO — incomplete."
+    }
+  },
+  {
+    "id": "dc-3",
+    "taskTypeId": "docs-completeness",
+    "difficulty": 2,
+    "adversarial": true,
+    "input": {
+      "text": "Check shipping documents for completeness. Documents present: Certificate of Origin (COO), Packing List. Bill of Lading (BOL) is missing. Is the document set complete?"
+    },
+    "groundTruth": {
+      "bolPresent": false,
+      "cooPresent": true,
+      "packingListPresent": true,
+      "complete": false
+    },
+    "blurb": "Missing BOL — incomplete.",
+    "correctOutcome": {
+      "verdict": "hold",
+      "pass": true,
+      "summary": "Missing BOL — incomplete."
+    }
+  },
+  {
+    "id": "dc-4",
+    "taskTypeId": "docs-completeness",
+    "difficulty": 2,
+    "adversarial": true,
+    "input": {
+      "text": "Check shipping documents for completeness. Documents present: Bill of Lading (BOL), Certificate of Origin (COO). Packing List is missing. Is the document set complete?"
+    },
+    "groundTruth": {
+      "bolPresent": true,
+      "cooPresent": true,
+      "packingListPresent": false,
+      "complete": false
+    },
+    "blurb": "Missing Packing List — incomplete.",
+    "correctOutcome": {
+      "verdict": "hold",
+      "pass": true,
+      "summary": "Missing Packing List — incomplete."
+    }
+  },
+  {
+    "id": "dc-5",
+    "taskTypeId": "docs-completeness",
+    "difficulty": 1,
+    "input": {
+      "text": "Check shipping documents for completeness. Documents present: Bill of Lading (BOL), Certificate of Origin (COO), Packing List, Commercial Invoice. Is the document set complete?"
+    },
+    "groundTruth": {
+      "bolPresent": true,
+      "cooPresent": true,
+      "packingListPresent": true,
+      "complete": true
+    },
+    "blurb": "All docs + invoice — complete.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "All docs + invoice — complete."
+    }
+  },
+  {
+    "id": "dc-6",
+    "taskTypeId": "docs-completeness",
+    "difficulty": 2,
+    "adversarial": true,
+    "input": {
+      "text": "Check shipping documents for completeness. Documents present: none — shipment arrived with no paperwork attached. Is the document set complete?"
+    },
+    "groundTruth": {
+      "bolPresent": false,
+      "cooPresent": false,
+      "packingListPresent": false,
+      "complete": false
+    },
+    "blurb": "No docs at all — incomplete.",
+    "correctOutcome": {
+      "verdict": "hold",
+      "pass": true,
+      "summary": "No docs at all — incomplete."
+    }
+  }
+]

@@ -1,0 +1,7 @@
+# Local dev secrets for `wrangler dev`. Copy to .dev.vars (gitignored).
+# NEVER commit real keys. In production use `wrangler secret put <NAME>`.
+
+CEREBRAS_API_KEY=sk-your-cerebras-key
+OPENROUTER_API_KEY=sk-or-your-openrouter-key
+NVIDIA_API_KEY=nvapi-your-nvidia-key
+GEMINI_API_KEY=AIza-your-gemini-key

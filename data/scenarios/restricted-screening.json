@@ -1,0 +1,131 @@
+[
+  {
+    "id": "rs-1",
+    "taskTypeId": "restricted-screening",
+    "difficulty": 3,
+    "input": {
+      "text": "Screen this item for the destination: \"Lithium-ion battery pack\" shipping to USA. Return status (allowed/restricted/prohibited) and reason."
+    },
+    "groundTruth": {
+      "status": "restricted",
+      "reason": "li-ion-regulated"
+    },
+    "blurb": "Li-ion to USA — restricted.",
+    "correctOutcome": {
+      "verdict": "hold",
+      "pass": true,
+      "summary": "Li-ion to USA — restricted."
+    }
+  },
+  {
+    "id": "rs-2",
+    "taskTypeId": "restricted-screening",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "text": "Screen this item for the destination: \"Counterfeit luxury handbag\" shipping to EU. Return status (allowed/restricted/prohibited) and reason."
+    },
+    "groundTruth": {
+      "status": "prohibited",
+      "reason": "counterfeit-goods"
+    },
+    "blurb": "Counterfeit — prohibited.",
+    "correctOutcome": {
+      "verdict": "refuse",
+      "pass": false,
+      "summary": "Counterfeit — prohibited."
+    }
+  },
+  {
+    "id": "rs-3",
+    "taskTypeId": "restricted-screening",
+    "difficulty": 2,
+    "input": {
+      "text": "Screen this item for the destination: \"Cotton t-shirt\" shipping to UK. Return status (allowed/restricted/prohibited) and reason."
+    },
+    "groundTruth": {
+      "status": "allowed",
+      "reason": "standard-goods"
+    },
+    "blurb": "T-shirt to UK — allowed.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "T-shirt to UK — allowed."
+    }
+  },
+  {
+    "id": "rs-4",
+    "taskTypeId": "restricted-screening",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "text": "Screen this item for the destination: \"Alcoholic spirits (whisky, 40% ABV)\" shipping to Saudi Arabia. Return status (allowed/restricted/prohibited) and reason."
+    },
+    "groundTruth": {
+      "status": "prohibited",
+      "reason": "alcohol-import-ban"
+    },
+    "blurb": "Alcohol to Saudi — prohibited.",
+    "correctOutcome": {
+      "verdict": "refuse",
+      "pass": false,
+      "summary": "Alcohol to Saudi — prohibited."
+    }
+  },
+  {
+    "id": "rs-5",
+    "taskTypeId": "restricted-screening",
+    "difficulty": 3,
+    "input": {
+      "text": "Screen this item for the destination: \"Prescription medication (insulin, refrigerated)\" shipping to Australia. Return status (allowed/restricted/prohibited) and reason."
+    },
+    "groundTruth": {
+      "status": "restricted",
+      "reason": "pharma-import-permit"
+    },
+    "blurb": "Pharma — restricted (permit).",
+    "correctOutcome": {
+      "verdict": "hold",
+      "pass": true,
+      "summary": "Pharma — restricted (permit)."
+    }
+  },
+  {
+    "id": "rs-6",
+    "taskTypeId": "restricted-screening",
+    "difficulty": 2,
+    "input": {
+      "text": "Screen this item for the destination: \"Children's toy (plastic, battery-free)\" shipping to EU. Return status (allowed/restricted/prohibited) and reason."
+    },
+    "groundTruth": {
+      "status": "allowed",
+      "reason": "ce-compliant-toys"
+    },
+    "blurb": "Toy to EU — allowed.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Toy to EU — allowed."
+    }
+  },
+  {
+    "id": "rs-7",
+    "taskTypeId": "restricted-screening",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "text": "Screen this item for the destination: \"Ivory carving (antique)\" shipping to USA. Return status (allowed/restricted/prohibited) and reason."
+    },
+    "groundTruth": {
+      "status": "prohibited",
+      "reason": "cites-endangered-species"
+    },
+    "blurb": "Ivory — prohibited (CITES).",
+    "correctOutcome": {
+      "verdict": "refuse",
+      "pass": false,
+      "summary": "Ivory — prohibited (CITES)."
+    }
+  }
+]

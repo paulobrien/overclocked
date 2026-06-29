@@ -1,0 +1,136 @@
+[
+  {
+    "id": "dw-1",
+    "taskTypeId": "dim-weight",
+    "difficulty": 2,
+    "input": {
+      "imageUrl": "/data/assets/dimweight/dw-1.png",
+      "text": "Parcel photo. Read the declared dimensions (length x width x height cm) and declared weight (kg), then assess whether there is a dimensional-weight mismatch versus the photo."
+    },
+    "groundTruth": {
+      "declaredLengthCm": 30,
+      "declaredWidthCm": 20,
+      "declaredHeightCm": 15,
+      "declaredWeightKg": 2.5,
+      "mismatch": false
+    },
+    "blurb": "Dims match weight — no mismatch.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Dims match weight — no mismatch."
+    }
+  },
+  {
+    "id": "dw-2",
+    "taskTypeId": "dim-weight",
+    "difficulty": 2,
+    "adversarial": true,
+    "input": {
+      "imageUrl": "/data/assets/dimweight/dw-2.png",
+      "text": "Parcel photo. Read declared dimensions (LxWxH cm) and declared weight (kg), then assess whether there is a dimensional-weight mismatch versus the photo."
+    },
+    "groundTruth": {
+      "declaredLengthCm": 50,
+      "declaredWidthCm": 40,
+      "declaredHeightCm": 40,
+      "declaredWeightKg": 1,
+      "mismatch": true
+    },
+    "blurb": "Large box, tiny declared weight — mismatch.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Large box, tiny declared weight — mismatch."
+    }
+  },
+  {
+    "id": "dw-3",
+    "taskTypeId": "dim-weight",
+    "difficulty": 2,
+    "input": {
+      "imageUrl": "/data/assets/dimweight/dw-3.png",
+      "text": "Parcel photo. Read declared dimensions (LxWxH cm) and declared weight (kg), then assess whether there is a dimensional-weight mismatch versus the photo."
+    },
+    "groundTruth": {
+      "declaredLengthCm": 20,
+      "declaredWidthCm": 15,
+      "declaredHeightCm": 10,
+      "declaredWeightKg": 1.2,
+      "mismatch": false
+    },
+    "blurb": "Small dense box — fine.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Small dense box — fine."
+    }
+  },
+  {
+    "id": "dw-4",
+    "taskTypeId": "dim-weight",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "imageUrl": "/data/assets/dimweight/dw-4.png",
+      "text": "Parcel photo. Read declared dimensions (LxWxH cm) and declared weight (kg), then assess whether there is a dimensional-weight mismatch versus the photo."
+    },
+    "groundTruth": {
+      "declaredLengthCm": 60,
+      "declaredWidthCm": 40,
+      "declaredHeightCm": 50,
+      "declaredWeightKg": 0.8,
+      "mismatch": true
+    },
+    "blurb": "Oversized, under-declared — mismatch.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Oversized, under-declared — mismatch."
+    }
+  },
+  {
+    "id": "dw-5",
+    "taskTypeId": "dim-weight",
+    "difficulty": 2,
+    "input": {
+      "imageUrl": "/data/assets/dimweight/dw-5.png",
+      "text": "Parcel photo. Read declared dimensions (LxWxH cm) and declared weight (kg), then assess whether there is a dimensional-weight mismatch versus the photo."
+    },
+    "groundTruth": {
+      "declaredLengthCm": 35,
+      "declaredWidthCm": 25,
+      "declaredHeightCm": 20,
+      "declaredWeightKg": 3,
+      "mismatch": false
+    },
+    "blurb": "Medium box, consistent.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Medium box, consistent."
+    }
+  },
+  {
+    "id": "dw-6",
+    "taskTypeId": "dim-weight",
+    "difficulty": 2,
+    "input": {
+      "imageUrl": "/data/assets/dimweight/dw-6.png",
+      "text": "Parcel photo. Read declared dimensions (LxWxH cm) and declared weight (kg), then assess whether there is a dimensional-weight mismatch versus the photo."
+    },
+    "groundTruth": {
+      "declaredLengthCm": 40,
+      "declaredWidthCm": 30,
+      "declaredHeightCm": 25,
+      "declaredWeightKg": 4.5,
+      "mismatch": false
+    },
+    "blurb": "Heavy small box — fine.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Heavy small box — fine."
+    }
+  }
+]

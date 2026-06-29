@@ -1,0 +1,137 @@
+[
+  {
+    "id": "sr-1",
+    "taskTypeId": "sla-risk",
+    "difficulty": 2,
+    "input": {
+      "text": "Assess SLA risk: shipment due in 24h, currently at sortation hub 200mi from destination, traffic normal, carrier on-time rate 97%. Return status (on-time/at-risk/breached), ETA in hours, and cause."
+    },
+    "groundTruth": {
+      "status": "on-time",
+      "etaHours": 8,
+      "cause": "none"
+    },
+    "blurb": "Healthy, on-time.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Healthy, on-time."
+    }
+  },
+  {
+    "id": "sr-2",
+    "taskTypeId": "sla-risk",
+    "difficulty": 2,
+    "adversarial": true,
+    "input": {
+      "text": "Assess SLA risk: shipment due in 18h, held at customs for inspection, clearance backlog 48h. Return status (on-time/at-risk/breached), ETA in hours, and cause."
+    },
+    "groundTruth": {
+      "status": "breached",
+      "etaHours": 50,
+      "cause": "customs"
+    },
+    "blurb": "Customs hold — breached.",
+    "correctOutcome": {
+      "verdict": "hold",
+      "pass": true,
+      "summary": "Customs hold — breached."
+    }
+  },
+  {
+    "id": "sr-3",
+    "taskTypeId": "sla-risk",
+    "difficulty": 2,
+    "input": {
+      "text": "Assess SLA risk: shipment due in 30h, severe weather warning on route, transit rerouted +6h. Return status (on-time/at-risk/breached), ETA in hours, and cause."
+    },
+    "groundTruth": {
+      "status": "at-risk",
+      "etaHours": 22,
+      "cause": "weather"
+    },
+    "blurb": "Weather — at-risk.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Weather — at-risk."
+    }
+  },
+  {
+    "id": "sr-4",
+    "taskTypeId": "sla-risk",
+    "difficulty": 2,
+    "input": {
+      "text": "Assess SLA risk: shipment due in 12h, vehicle breakdown reported, replacement dispatched ETA +4h. Return status (on-time/at-risk/breached), ETA in hours, and cause."
+    },
+    "groundTruth": {
+      "status": "at-risk",
+      "etaHours": 14,
+      "cause": "vehicle-breakdown"
+    },
+    "blurb": "Breakdown — at-risk.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Breakdown — at-risk."
+    }
+  },
+  {
+    "id": "sr-5",
+    "taskTypeId": "sla-risk",
+    "difficulty": 2,
+    "adversarial": true,
+    "input": {
+      "text": "Assess SLA risk: shipment due in 6h, still at origin depot, driver shortage, no vehicle assigned. Return status (on-time/at-risk/breached), ETA in hours, and cause."
+    },
+    "groundTruth": {
+      "status": "breached",
+      "etaHours": 30,
+      "cause": "driver-shortage"
+    },
+    "blurb": "No driver — breached.",
+    "correctOutcome": {
+      "verdict": "hold",
+      "pass": true,
+      "summary": "No driver — breached."
+    }
+  },
+  {
+    "id": "sr-6",
+    "taskTypeId": "sla-risk",
+    "difficulty": 1,
+    "input": {
+      "text": "Assess SLA risk: shipment due in 48h, in transit on schedule, all checkpoints green. Return status (on-time/at-risk/breached), ETA in hours, and cause."
+    },
+    "groundTruth": {
+      "status": "on-time",
+      "etaHours": 36,
+      "cause": "none"
+    },
+    "blurb": "Green across the board.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Green across the board."
+    }
+  },
+  {
+    "id": "sr-7",
+    "taskTypeId": "sla-risk",
+    "difficulty": 2,
+    "input": {
+      "text": "Assess SLA risk: shipment due in 20h, misrouted to wrong hub, correction in progress +5h. Return status (on-time/at-risk/breached), ETA in hours, and cause."
+    },
+    "groundTruth": {
+      "status": "at-risk",
+      "etaHours": 16,
+      "cause": "misroute"
+    },
+    "blurb": "Misroute correction.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Misroute correction."
+    }
+  }
+]

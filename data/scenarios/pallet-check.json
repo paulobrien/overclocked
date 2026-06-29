@@ -1,0 +1,125 @@
+[
+  {
+    "id": "pc-1",
+    "taskTypeId": "pallet-check",
+    "difficulty": 2,
+    "input": {
+      "imageUrl": "/data/assets/pallet/pc-1.png",
+      "text": "Pallet/load photo. Count the cartons, detect any overhang past the pallet edge, and flag any stacking violation (unstable/columnar without interlock)."
+    },
+    "groundTruth": {
+      "cartonCount": 24,
+      "overhang": false,
+      "stackingViolation": false
+    },
+    "blurb": "Neat interlocked stack.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Neat interlocked stack."
+    }
+  },
+  {
+    "id": "pc-2",
+    "taskTypeId": "pallet-check",
+    "difficulty": 2,
+    "adversarial": true,
+    "input": {
+      "imageUrl": "/data/assets/pallet/pc-2.png",
+      "text": "Pallet/load photo. Count the cartons, detect any overhang past the pallet edge, and flag any stacking violation (unstable/columnar without interlock)."
+    },
+    "groundTruth": {
+      "cartonCount": 18,
+      "overhang": true,
+      "stackingViolation": false
+    },
+    "blurb": "Cartons overhanging edge.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Cartons overhanging edge."
+    }
+  },
+  {
+    "id": "pc-3",
+    "taskTypeId": "pallet-check",
+    "difficulty": 2,
+    "adversarial": true,
+    "input": {
+      "imageUrl": "/data/assets/pallet/pc-3.png",
+      "text": "Pallet/load photo. Count the cartons, detect any overhang past the pallet edge, and flag any stacking violation (unstable/columnar without interlock)."
+    },
+    "groundTruth": {
+      "cartonCount": 20,
+      "overhang": false,
+      "stackingViolation": true
+    },
+    "blurb": "Columnar stack, no interlock — unstable.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Columnar stack, no interlock — unstable."
+    }
+  },
+  {
+    "id": "pc-4",
+    "taskTypeId": "pallet-check",
+    "difficulty": 2,
+    "input": {
+      "imageUrl": "/data/assets/pallet/pc-4.png",
+      "text": "Pallet/load photo. Count the cartons, detect any overhang past the pallet edge, and flag any stacking violation (unstable/columnar without interlock)."
+    },
+    "groundTruth": {
+      "cartonCount": 30,
+      "overhang": false,
+      "stackingViolation": false
+    },
+    "blurb": "Full stable pallet.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Full stable pallet."
+    }
+  },
+  {
+    "id": "pc-5",
+    "taskTypeId": "pallet-check",
+    "difficulty": 2,
+    "input": {
+      "imageUrl": "/data/assets/pallet/pc-5.png",
+      "text": "Pallet/load photo. Count the cartons, detect any overhang past the pallet edge, and flag any stacking violation (unstable/columnar without interlock)."
+    },
+    "groundTruth": {
+      "cartonCount": 12,
+      "overhang": false,
+      "stackingViolation": false
+    },
+    "blurb": "Half pallet, neat.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Half pallet, neat."
+    }
+  },
+  {
+    "id": "pc-6",
+    "taskTypeId": "pallet-check",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "imageUrl": "/data/assets/pallet/pc-6.png",
+      "text": "Pallet/load photo. Count the cartons, detect any overhang past the pallet edge, and flag any stacking violation (unstable/columnar without interlock)."
+    },
+    "groundTruth": {
+      "cartonCount": 22,
+      "overhang": true,
+      "stackingViolation": true
+    },
+    "blurb": "Overhang AND unstable (adversarial).",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Overhang AND unstable (adversarial)."
+    }
+  }
+]

@@ -1,0 +1,117 @@
+[
+  {
+    "id": "cs-1",
+    "taskTypeId": "carrier-select",
+    "difficulty": 1,
+    "input": {
+      "text": "Select the least-cost carrier for: parcel 2kg, zone EU-1, next-day not required, no special handling. Quotes: UPS GROUND £4.20, DHL EXPRESS £8.50, Royal Mail TRACKED 24 £3.10. Return carrier, service, cost."
+    },
+    "groundTruth": {
+      "carrier": "Royal Mail",
+      "service": "TRACKED 24",
+      "cost": "GBP 3.10"
+    },
+    "blurb": "Cheapest = Royal Mail.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Cheapest = Royal Mail."
+    }
+  },
+  {
+    "id": "cs-2",
+    "taskTypeId": "carrier-select",
+    "difficulty": 2,
+    "input": {
+      "text": "Select the least-cost carrier for: parcel 8kg, zone US-E, next-day REQUIRED, insured. Quotes: UPS NEXT DAY £22.00, FedEx PRIORITY £19.50, DHL EXPRESS £24.00. Return carrier, service, cost."
+    },
+    "groundTruth": {
+      "carrier": "FedEx",
+      "service": "PRIORITY",
+      "cost": "GBP 19.50"
+    },
+    "blurb": "Cheapest next-day = FedEx.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Cheapest next-day = FedEx."
+    }
+  },
+  {
+    "id": "cs-3",
+    "taskTypeId": "carrier-select",
+    "difficulty": 1,
+    "input": {
+      "text": "Select the least-cost carrier for: parcel 1kg, zone domestic, standard. Quotes: Hermes STANDARD £2.40, Yodel ECONOMY £2.80, DPD NEXT DAY £6.99. Return carrier, service, cost."
+    },
+    "groundTruth": {
+      "carrier": "Hermes",
+      "service": "STANDARD",
+      "cost": "GBP 2.40"
+    },
+    "blurb": "Cheapest = Hermes.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Cheapest = Hermes."
+    }
+  },
+  {
+    "id": "cs-4",
+    "taskTypeId": "carrier-select",
+    "difficulty": 2,
+    "adversarial": true,
+    "input": {
+      "text": "Select the least-cost carrier for: parcel 25kg, hazmat, zone EU-3. Only hazmat-certified carriers allowed. Quotes: UPS GROUND £9.00 (not hazmat-cert), DHL HAZMAT £15.00, TNT FREIGHT £28.00. Return carrier, service, cost."
+    },
+    "groundTruth": {
+      "carrier": "DHL",
+      "service": "HAZMAT",
+      "cost": "GBP 15.00"
+    },
+    "blurb": "Hazmat constraint excludes cheap option.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Hazmat constraint excludes cheap option."
+    }
+  },
+  {
+    "id": "cs-5",
+    "taskTypeId": "carrier-select",
+    "difficulty": 2,
+    "input": {
+      "text": "Select the least-cost carrier for: high-value parcel £6000, zone EU-1, signature required. Quotes: UPS INSURED £18.00, DHL SECURE £16.50, FedEx PRIORITY £20.00. Return carrier, service, cost."
+    },
+    "groundTruth": {
+      "carrier": "DHL",
+      "service": "SECURE",
+      "cost": "GBP 16.50"
+    },
+    "blurb": "Cheapest insured = DHL Secure.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Cheapest insured = DHL Secure."
+    }
+  },
+  {
+    "id": "cs-6",
+    "taskTypeId": "carrier-select",
+    "difficulty": 1,
+    "input": {
+      "text": "Select the least-cost carrier for: parcel 0.5kg letter, zone domestic, no rush. Quotes: Royal Mail LETTER £0.85, Hermes £2.40, Yodel £2.80. Return carrier, service, cost."
+    },
+    "groundTruth": {
+      "carrier": "Royal Mail",
+      "service": "LETTER",
+      "cost": "GBP 0.85"
+    },
+    "blurb": "Letter = Royal Mail.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Letter = Royal Mail."
+    }
+  }
+]

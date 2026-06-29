@@ -1,0 +1,112 @@
+[
+  {
+    "id": "rma-1",
+    "taskTypeId": "rma-disposition",
+    "difficulty": 2,
+    "input": {
+      "text": "Returns disposition: customer returned unused headphones in original sealed packaging, within 30-day window. Decide disposition (restock/refurbish/scrap) and reason."
+    },
+    "groundTruth": {
+      "disposition": "restock",
+      "reason": "unused-sealed"
+    },
+    "blurb": "Sealed return — restock.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Sealed return — restock."
+    }
+  },
+  {
+    "id": "rma-2",
+    "taskTypeId": "rma-disposition",
+    "difficulty": 2,
+    "input": {
+      "text": "Returns disposition: returned laptop with cracked screen, otherwise functional, refurbishable. Decide disposition (restock/refurbish/scrap) and reason."
+    },
+    "groundTruth": {
+      "disposition": "refurbish",
+      "reason": "cosmetic-damage"
+    },
+    "blurb": "Cracked screen — refurbish.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Cracked screen — refurbish."
+    }
+  },
+  {
+    "id": "rma-3",
+    "taskTypeId": "rma-disposition",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "text": "Returns disposition: returned liquid-damaged smartphone, motherboard corroded, not repairable, data security concern. Decide disposition (restock/refurbish/scrap) and reason."
+    },
+    "groundTruth": {
+      "disposition": "scrap",
+      "reason": "liquid-damage-unrepairable"
+    },
+    "blurb": "Liquid damage — scrap (adversarial).",
+    "correctOutcome": {
+      "verdict": "refuse",
+      "pass": false,
+      "summary": "Liquid damage — scrap (adversarial)."
+    }
+  },
+  {
+    "id": "rma-4",
+    "taskTypeId": "rma-disposition",
+    "difficulty": 2,
+    "input": {
+      "text": "Returns disposition: returned clothing with tags attached, no wear, customer changed mind. Decide disposition (restock/refurbish/scrap) and reason."
+    },
+    "groundTruth": {
+      "disposition": "restock",
+      "reason": "tags-on-unworn"
+    },
+    "blurb": "Unworn clothing — restock.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Unworn clothing — restock."
+    }
+  },
+  {
+    "id": "rma-5",
+    "taskTypeId": "rma-disposition",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "text": "Returns disposition: returned appliance with missing accessories and damaged packaging, unit itself works but not resellable as new. Decide disposition (restock/refurbish/scrap) and reason."
+    },
+    "groundTruth": {
+      "disposition": "refurbish",
+      "reason": "incomplete-packaging"
+    },
+    "blurb": "Missing accessories — refurbish.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Missing accessories — refurbish."
+    }
+  },
+  {
+    "id": "rma-6",
+    "taskTypeId": "rma-disposition",
+    "difficulty": 2,
+    "input": {
+      "text": "Returns disposition: returned expired consumable (supplement), cannot be restocked per policy, not hazardous. Decide disposition (restock/refurbish/scrap) and reason."
+    },
+    "groundTruth": {
+      "disposition": "scrap",
+      "reason": "expired"
+    },
+    "blurb": "Expired — scrap.",
+    "correctOutcome": {
+      "verdict": "refuse",
+      "pass": false,
+      "summary": "Expired — scrap."
+    }
+  }
+]

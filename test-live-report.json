@@ -1,0 +1,26 @@
+{
+  "model": "gemma-4-31b",
+  "rows": [
+    {
+      "id": "av-1",
+      "task": "address-validation",
+      "modality": "text",
+      "diff": 1,
+      "adv": false,
+      "compTokens": 35,
+      "chunks": 5,
+      "ttftMs": 583,
+      "genMs": 3,
+      "totalMs": 646,
+      "tpsReal": 12122,
+      "tpsApprox": 7966,
+      "tpsTotal": 54,
+      "fields": "1/3",
+      "correct": false,
+      "resolved": true,
+      "verdict": "accept",
+      "checkerPass": true,
+      "checkerOverFlag": false
+    }
+  ]
+}

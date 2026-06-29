@@ -1,0 +1,14 @@
+# Same-origin proxy alternative for Cloudflare Pages.
+#
+# Use this INSTEAD of setting VITE_AGENT_BASE (.env.production) if you'd rather
+# the client call a relative `/api/*` on the Pages origin and have Pages proxy
+# it to the deployed Worker. To activate: copy this file to `public/_redirects`
+# (drop the `.example`), replace the Worker URL with yours, and build with
+# VITE_AGENT_BASE UNSET so the client uses the relative `/api` base.
+#
+# The 200 status makes this a proxy/rewrite (not a 30x redirect), so POST bodies
+# and the SSE stream pass through. Pick ONE approach — this OR VITE_AGENT_BASE,
+# not both (if VITE_AGENT_BASE is set the client calls the Worker directly and
+# this file is never consulted).
+#
+# /api/*  https://overclocked-worker.YOUR-SUBDOMAIN.workers.dev/api/:splat  200

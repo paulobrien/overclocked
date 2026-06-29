@@ -1,0 +1,47 @@
+name = "overclocked-worker"
+main = "worker/index.ts"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+# The Worker is the ONLY thing that holds API keys. The browser never sees them.
+# All three providers now run through the Vercel AI SDK (streamObject + Zod),
+# so the Worker resolves the provider -> AI SDK model and runs structured-output
+# streaming, re-emitting as OpenAI SSE for the client.
+#
+# Set secrets with:
+#   wrangler secret put CEREBRAS_API_KEY
+#   wrangler secret put OPENROUTER_API_KEY
+#   wrangler secret put NVIDIA_API_KEY     # only if you race the NVIDIA challenger
+#   wrangler secret put GEMINI_API_KEY
+# For local `wrangler dev`, put the same keys in a gitignored .dev.vars file.
+
+# ┌──────────────────────────────────────────────────────────────────────────┐
+# │ ⚠ These *_MODEL ids are the ones the hackathon providers serve. If your    │
+# │   account/route exposes a different id, set it here — a wrong/unavailable   │
+# │   id surfaces at demo time as an opaque `upstream_error`. The headline demo │
+# │   is the SAME Gemma 4 31B on the Cerebras and GPU-challenger lanes (only    │
+# │   the silicon differs), so keep those two ids equivalent.                  │
+# └──────────────────────────────────────────────────────────────────────────┘
+[vars]
+# Cerebras (OpenAI-compatible, wafer-scale) — the headline lane.
+CEREBRAS_BASE_URL = "https://api.cerebras.ai/v1"
+CEREBRAS_MODEL = "gemma-4-31b"             # the Gemma 4 31B id Cerebras serves (per the Gemma 4 FAQ)
+
+# OpenRouter (OpenAI-compatible, GPU-hosted challenger) — same model, different silicon.
+OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+OPENROUTER_MODEL = "google/gemma-4-31b-it"    # the GPU-hosted Gemma 4 31B id (OpenRouter & NVIDIA NIM)
+
+# NVIDIA NIM (OpenAI-compatible, GPU-hosted) — an alternative challenger to OpenRouter,
+# selectable per-run from the lobby. Serves the same Gemma 4 31B, so it's still a
+# pure silicon-vs-silicon race against Cerebras.
+NVIDIA_BASE_URL = "https://integrate.api.nvidia.com/v1"
+NVIDIA_MODEL = "google/gemma-4-31b-it"        # the model id NVIDIA NIM serves
+
+# Gemini (the "bottom production line") — Gemini 3.1 Flash Lite via @ai-sdk/google.
+# Leave GEMINI_BASE_URL empty to use the Google default endpoint.
+GEMINI_BASE_URL = ""
+GEMINI_MODEL = "gemini-3.1-flash-lite"     # PLACEHOLDER — the GA 3.x Flash Lite id; overridable per-lane
+
+# Optional: simple shared secret so only OUR app can call the Worker. Set a real
+# value in production; leave blank for local dev. The client sends it as a header.
+APP_TOKEN = ""

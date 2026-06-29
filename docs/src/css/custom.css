@@ -1,0 +1,28 @@
+/* OVERCLOCKED docs — custom theme tweaks to match the app's arcade aesthetic. */
+:root {
+  --ifm-color-primary: #ef5a2a;
+  --ifm-color-primary-dark: #d44e22;
+  --ifm-color-primary-darker: #c4471f;
+  --ifm-color-primary-darkest: #a23a19;
+  --ifm-color-primary-light: #f4714a;
+  --ifm-color-primary-lighter: #f57d57;
+  --ifm-color-primary-lightest: #f79e80;
+  --ifm-code-font-size: 90%;
+  --docusaurus-highlighted-code-line-bg: rgba(239, 90, 42, 0.12);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #f57d57;
+  --ifm-color-primary-dark: #f06a3f;
+  --ifm-color-primary-darker: #ed5f30;
+  --ifm-color-primary-darkest: #d44e22;
+  --ifm-color-primary-light: #f79e80;
+  --ifm-color-primary-lighter: #f9b09a;
+  --ifm-color-primary-lightest: #fbc9b8;
+  --docusaurus-highlighted-code-line-bg: rgba(245, 125, 87, 0.18);
+}
+
+/* inline diagrams / ASCII art render better monospaced and un-wrapped */
+pre {
+  font-size: 0.82rem;
+}

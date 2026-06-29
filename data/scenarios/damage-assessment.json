@@ -1,0 +1,131 @@
+[
+  {
+    "id": "dm-1",
+    "taskTypeId": "damage-assessment",
+    "difficulty": 1,
+    "input": {
+      "imageUrl": "/data/assets/damage/dm-1.png",
+      "text": "Parcel photo. Is it damaged? If so, classify type (crushed/wet/torn), severity 0-5, and disposition (accept/repackage/refuse)."
+    },
+    "groundTruth": {
+      "damaged": false,
+      "damageType": "none",
+      "severity": 0,
+      "action": "accept"
+    },
+    "blurb": "Pristine parcel — no damage.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Pristine parcel — no damage."
+    }
+  },
+  {
+    "id": "dm-2",
+    "taskTypeId": "damage-assessment",
+    "difficulty": 2,
+    "adversarial": true,
+    "input": {
+      "imageUrl": "/data/assets/damage/dm-2.png",
+      "text": "Parcel photo. Is it damaged? If so, classify type (crushed/wet/torn), severity 0-5, and disposition (accept/repackage/refuse)."
+    },
+    "groundTruth": {
+      "damaged": true,
+      "damageType": "crushed",
+      "severity": 4,
+      "action": "refuse"
+    },
+    "blurb": "Badly crushed corner — refuse.",
+    "correctOutcome": {
+      "verdict": "refuse",
+      "pass": false,
+      "summary": "Badly crushed corner — refuse."
+    }
+  },
+  {
+    "id": "dm-3",
+    "taskTypeId": "damage-assessment",
+    "difficulty": 2,
+    "adversarial": true,
+    "input": {
+      "imageUrl": "/data/assets/damage/dm-3.png",
+      "text": "Parcel photo. Is it damaged? If so, classify type (crushed/wet/torn), severity 0-5, and disposition (accept/repackage/refuse)."
+    },
+    "groundTruth": {
+      "damaged": true,
+      "damageType": "wet",
+      "severity": 3,
+      "action": "repackage"
+    },
+    "blurb": "Water damage — repackage.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Water damage — repackage."
+    }
+  },
+  {
+    "id": "dm-4",
+    "taskTypeId": "damage-assessment",
+    "difficulty": 2,
+    "input": {
+      "imageUrl": "/data/assets/damage/dm-4.png",
+      "text": "Parcel photo. Is it damaged? If so, classify type (crushed/wet/torn), severity 0-5, and disposition (accept/repackage/refuse)."
+    },
+    "groundTruth": {
+      "damaged": true,
+      "damageType": "torn",
+      "severity": 2,
+      "action": "repackage"
+    },
+    "blurb": "Torn outer wrap — repackage.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Torn outer wrap — repackage."
+    }
+  },
+  {
+    "id": "dm-5",
+    "taskTypeId": "damage-assessment",
+    "difficulty": 1,
+    "input": {
+      "imageUrl": "/data/assets/damage/dm-5.png",
+      "text": "Parcel photo. Is it damaged? If so, classify type (crushed/wet/torn), severity 0-5, and disposition (accept/repackage/refuse)."
+    },
+    "groundTruth": {
+      "damaged": false,
+      "damageType": "none",
+      "severity": 0,
+      "action": "accept"
+    },
+    "blurb": "Minor scuff only — accept.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "Minor scuff only — accept."
+    }
+  },
+  {
+    "id": "dm-6",
+    "taskTypeId": "damage-assessment",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "imageUrl": "/data/assets/damage/dm-6.png",
+      "text": "Parcel photo. Is it damaged? If so, classify type (crushed/wet/torn), severity 0-5, and disposition (accept/repackage/refuse)."
+    },
+    "groundTruth": {
+      "damaged": true,
+      "damageType": "crushed",
+      "severity": 5,
+      "action": "refuse"
+    },
+    "blurb": "Totally destroyed — refuse.",
+    "correctOutcome": {
+      "verdict": "refuse",
+      "pass": false,
+      "summary": "Totally destroyed — refuse."
+    }
+  }
+]

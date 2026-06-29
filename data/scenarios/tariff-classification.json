@@ -1,0 +1,130 @@
+[
+  {
+    "id": "tf-1",
+    "taskTypeId": "tariff-classification",
+    "difficulty": 2,
+    "input": {
+      "text": "Classify for import: \"Lithium-ion battery, 3.7V, 2000mAh, for use in a smartphone.\" Return the HS code and the duty category."
+    },
+    "groundTruth": {
+      "hsCode": "8507.60",
+      "dutyCategory": "standard"
+    },
+    "blurb": "Li-ion battery tariff.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Li-ion battery tariff."
+    }
+  },
+  {
+    "id": "tf-2",
+    "taskTypeId": "tariff-classification",
+    "difficulty": 2,
+    "input": {
+      "text": "Classify for import: \"Printed paperback book, 320 pages, fiction novel.\" Return the HS code and the duty category."
+    },
+    "groundTruth": {
+      "hsCode": "4901.99",
+      "dutyCategory": "duty-free"
+    },
+    "blurb": "Book — duty-free.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Book — duty-free."
+    }
+  },
+  {
+    "id": "tf-3",
+    "taskTypeId": "tariff-classification",
+    "difficulty": 2,
+    "input": {
+      "text": "Classify for import: \"Cotton t-shirt, men's, knitted, 100% cotton.\" Return the HS code and the duty category."
+    },
+    "groundTruth": {
+      "hsCode": "6109.10",
+      "dutyCategory": "standard"
+    },
+    "blurb": "Cotton t-shirt.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Cotton t-shirt."
+    }
+  },
+  {
+    "id": "tf-4",
+    "taskTypeId": "tariff-classification",
+    "difficulty": 3,
+    "input": {
+      "text": "Classify for import: \"Stainless steel kitchen knife set, with wooden handles.\" Return the HS code and the duty category."
+    },
+    "groundTruth": {
+      "hsCode": "8211.92",
+      "dutyCategory": "low-duty"
+    },
+    "blurb": "Knife set.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Knife set."
+    }
+  },
+  {
+    "id": "tf-5",
+    "taskTypeId": "tariff-classification",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "text": "Classify for import: \"Alcoholic beverage, distilled spirits, whisky, 40% ABV, 700ml bottles.\" Return the HS code and the duty category."
+    },
+    "groundTruth": {
+      "hsCode": "2208.30",
+      "dutyCategory": "high-duty"
+    },
+    "blurb": "Whisky — high duty (adversarial).",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Whisky — high duty (adversarial)."
+    }
+  },
+  {
+    "id": "tf-6",
+    "taskTypeId": "tariff-classification",
+    "difficulty": 2,
+    "input": {
+      "text": "Classify for import: \"Personal laptop computer, 14 inch, 16GB RAM.\" Return the HS code and the duty category."
+    },
+    "groundTruth": {
+      "hsCode": "8471.30",
+      "dutyCategory": "duty-free"
+    },
+    "blurb": "Laptop — duty-free.",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Laptop — duty-free."
+    }
+  },
+  {
+    "id": "tf-7",
+    "taskTypeId": "tariff-classification",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "text": "Classify for import: \"Tobacco product, cigarettes, 20 per pack.\" Return the HS code and the duty category."
+    },
+    "groundTruth": {
+      "hsCode": "2402.20",
+      "dutyCategory": "high-duty"
+    },
+    "blurb": "Cigarettes — high duty (adversarial).",
+    "correctOutcome": {
+      "verdict": "reroute",
+      "pass": true,
+      "summary": "Cigarettes — high duty (adversarial)."
+    }
+  }
+]

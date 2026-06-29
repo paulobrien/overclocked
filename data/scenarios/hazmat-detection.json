@@ -1,0 +1,124 @@
+[
+  {
+    "id": "hz-1",
+    "taskTypeId": "hazmat-detection",
+    "difficulty": 2,
+    "input": {
+      "imageUrl": "/data/assets/hazmat/hz-1.png",
+      "text": "Hazmat label photo. Identify the UN/ADR class, whether labelling is compliant, and whether any required label is missing."
+    },
+    "groundTruth": {
+      "unClass": "3",
+      "compliant": true,
+      "labelMissing": false
+    },
+    "blurb": "UN class 3 flammable liquid, correctly labelled.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "UN class 3 flammable liquid, correctly labelled."
+    }
+  },
+  {
+    "id": "hz-2",
+    "taskTypeId": "hazmat-detection",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "imageUrl": "/data/assets/hazmat/hz-2.png",
+      "text": "Hazmat label photo. Identify the UN/ADR class, whether labelling is compliant, and whether any required label is missing."
+    },
+    "groundTruth": {
+      "unClass": "8",
+      "compliant": false,
+      "labelMissing": true
+    },
+    "blurb": "UN class 8 corrosive — required label missing (mislabel).",
+    "correctOutcome": {
+      "verdict": "hold",
+      "pass": true,
+      "summary": "UN class 8 corrosive — required label missing (mislabel)."
+    }
+  },
+  {
+    "id": "hz-3",
+    "taskTypeId": "hazmat-detection",
+    "difficulty": 2,
+    "input": {
+      "imageUrl": "/data/assets/hazmat/hz-3.png",
+      "text": "Hazmat label photo. Identify the UN/ADR class, whether labelling is compliant, and whether any required label is missing."
+    },
+    "groundTruth": {
+      "unClass": "2.1",
+      "compliant": true,
+      "labelMissing": false
+    },
+    "blurb": "UN 2.1 flammable gas, compliant.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "UN 2.1 flammable gas, compliant."
+    }
+  },
+  {
+    "id": "hz-4",
+    "taskTypeId": "hazmat-detection",
+    "difficulty": 2,
+    "input": {
+      "imageUrl": "/data/assets/hazmat/hz-4.png",
+      "text": "Hazmat label photo. Identify the UN/ADR class, whether labelling is compliant, and whether any required label is missing."
+    },
+    "groundTruth": {
+      "unClass": "5.1",
+      "compliant": true,
+      "labelMissing": false
+    },
+    "blurb": "UN 5.1 oxidizer, compliant.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "UN 5.1 oxidizer, compliant."
+    }
+  },
+  {
+    "id": "hz-5",
+    "taskTypeId": "hazmat-detection",
+    "difficulty": 3,
+    "adversarial": true,
+    "input": {
+      "imageUrl": "/data/assets/hazmat/hz-5.png",
+      "text": "Hazmat label photo. Identify the UN/ADR class, whether labelling is compliant, and whether any required label is missing."
+    },
+    "groundTruth": {
+      "unClass": "6.1",
+      "compliant": false,
+      "labelMissing": true
+    },
+    "blurb": "UN 6.1 toxic — label missing (mislabel).",
+    "correctOutcome": {
+      "verdict": "hold",
+      "pass": true,
+      "summary": "UN 6.1 toxic — label missing (mislabel)."
+    }
+  },
+  {
+    "id": "hz-6",
+    "taskTypeId": "hazmat-detection",
+    "difficulty": 1,
+    "input": {
+      "imageUrl": "/data/assets/hazmat/hz-6.png",
+      "text": "Hazmat label photo. Identify the UN/ADR class, whether labelling is compliant, and whether any required label is missing."
+    },
+    "groundTruth": {
+      "unClass": "9",
+      "compliant": true,
+      "labelMissing": false
+    },
+    "blurb": "UN 9 miscellaneous, compliant.",
+    "correctOutcome": {
+      "verdict": "accept",
+      "pass": true,
+      "summary": "UN 9 miscellaneous, compliant."
+    }
+  }
+]
